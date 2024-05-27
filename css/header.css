@@ -1,0 +1,274 @@
+/* Hamburger button styles */
+.hamburger {
+    margin-top: 20px;
+    margin-left: 6px;
+    margin-bottom: 4px;
+    display: none;
+    cursor: pointer;
+}
+
+.line {
+    width: 25px;
+    height: 3px;
+    background-color: var(--main-contrast-color);
+    margin: 5px;
+    transition: 0.4s;
+}
+
+.menu {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0px;
+    background-color:rgb(52, 49, 66);
+}
+
+/* Prevent the page from scrolling when the mobile menu is open */
+body.menu-open {
+    overflow: hidden;
+}
+
+.topnav {
+    overflow: visible;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3.3em;
+    z-index: 100;
+}
+
+li {
+    float: left;
+}
+  
+li a {
+    font-size: 1em;
+    display: block;
+    color: rgb(199, 208, 240);
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+}
+
+.main-menu-link {
+    display: block;
+    box-sizing: border-box;
+    color: rgb(199, 208, 240);
+    text-align: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    text-decoration: none;
+    transition: 0.15s ease-in;
+}
+
+.main-menu-link:hover {
+    border-bottom: 5px solid rgb(54, 90, 134);
+    padding-bottom: 8px;
+    transition: 0.15s ease-in;
+}
+
+.droplink {
+    margin-right: 20px;
+}
+
+.call-to-action {
+    padding: 12px;
+    position: fixed;
+    right: 0;
+    border-width: 3px;
+    border-style: solid;
+    border-image: linear-gradient(to right, var(--main-complimentary-color), var(--main-contrast-color)) 1;
+    border-image-slice: 1;
+    z-index:0;
+    overflow: hidden;
+}
+
+.call-to-action::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color:rgb(40, 38, 48);
+    transition: left 0.3s;
+    z-index: -1;
+    border-radius: 10%;
+}
+
+.call-to-action:hover {
+    background-color:rgb(52, 49, 66);
+    animation: gradientChange 2s ease-in-out infinite;
+}
+
+.call-to-action:hover::before {
+    left: 0;
+}
+
+@keyframes gradientChange {
+    0% {
+        border-image: linear-gradient(to right, var(--main-complimentary-color), var(--main-contrast-color)) 1;
+    }
+    50% {
+        border-image: linear-gradient(to right, #ff387a,  var(--main-complimentary-color)) 1;
+    }
+    100% {
+        border-image: linear-gradient(to right, var(--main-complimentary-color), var(--main-contrast-color)) 1;
+    }
+}
+
+
+/*--------DROPDOWN MENU------------------------------------------------------*/
+
+/* Basic styling for the dropdown menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* Styling for the arrow */
+.dropdown::after {
+    content: '\25BE';
+    color: rgb(125, 125, 134);
+    font-size: 1.5em;
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    transform: translateY(-50%);
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(35, 71, 133, 0.764);
+    border-radius: 3%;
+    min-width: 200px;
+    box-shadow: 3px 3px 50px 10px var(--green-glow-color);
+}
+  
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* keep the main menu link in a hover state when the dropdown is hovered */
+.dropdown:hover > .main-menu-link {
+    border-bottom: 5px solid rgb(54, 90, 134);
+    padding-bottom: 8px;
+    transition: 0.15s ease-in;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: rgba(37, 31, 68, 0.8);
+    border-radius: 7%;
+    color: var(--main-contrast-color);
+    transition: 0.15s ease-in-out;
+}
+
+/*-----------------------MOBILE------------------------------------------*/
+@media screen and (max-width: 560px) {
+    .hamburger {
+        display: block; /* Show the hamburger button */
+    }
+      
+    .menu {
+        display: none; /* Hide the menu by default */
+    }
+      
+    .menu.open {
+        display: block; /* Show the menu when the hamburger button is clicked */
+        border-width: 3px;
+        border-style: solid;
+        border-image: linear-gradient(to right, var(--main-complimentary-color), var(--main-contrast-color)) 1;
+        border-image-slice: 1;
+        display: flex;
+        flex-direction: column;
+        width: 60vw;
+        background-color: rgba(40, 37, 50, 0.8);
+        margin-left: 10px;
+        margin-top: 10px;
+        overflow-y: scroll;
+        height: 90vh;
+    }
+    
+    #drop-content-0.visible {
+        display: block;
+        position: relative;
+        background-color: rgba(40, 37, 50, 0.5);
+        box-shadow: none;
+    }
+
+    #drop-content-1.visible {
+        display: block;
+        position: relative;
+        background-color: rgba(40, 37, 50, 0.5);
+        box-shadow: none;
+    }
+
+    .dropdown-content a {
+        padding-left: 40px;
+    }
+
+    .dropdown-content a:hover {
+        padding-left: 50px;
+    }
+
+    .menu.open li {
+        text-align: left;
+    }
+
+    .menu.open li a {
+        text-align: left;
+    }
+
+    .menu.open li a:hover {
+        background-color: none;
+        color: var(--main-contrast-color);
+        border: none;
+        padding-bottom: 14px;
+    }
+
+    .menu.open li a:active {
+        background-color: none;
+        color: var(--main-contrast-color);
+    }
+
+    .call-to-action {
+        position: relative;
+        padding-bottom: 14px;
+        right: auto;
+        border: none;
+        border-image: none;
+        padding-right: 29%;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: none;
+    }
+
+    .dropdown:hover > .main-menu-link {
+        border-bottom: none;
+        padding-bottom: 14px;
+    }
+
+    .dropdown::after {
+        font-size: 2em;
+    }
+
+    /* Styling for the arrow when dropdown is open */
+    .dropdown.open::after {
+        content: '\25BE';
+        color: rgb(125, 125, 134);
+        font-size: 2em;
+        position: absolute;
+        top: 8%;
+        right: 18px;
+        transform: translateY(-50%);
+    }
+}

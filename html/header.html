@@ -1,0 +1,45 @@
+<!--Add header styling-->
+<link rel="stylesheet" href="/css/header.css">
+<!-- Hamburger button -->
+<div class="hamburger" onclick="toggleMenu()">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+</div>
+<!-- Menu -->
+<nav aria-label="primary menu">
+    <ul class="menu">
+        <li><a class="main-menu-link home" href="/index.html">Home</a></li>
+    
+        <li class="dropdown" id="dropdown-0">
+            <a class="droplink main-menu-link" href="#" aria-haspopup="true" aria-expanded="false">3D Art</a>
+            <div class="dropdown-content" id="drop-content-0">
+                <a href="/html/3d.html#soda">Soda Can</a>
+                <a href="/html/3d.html#comp">Still Life Composition</a>
+                <a href="/html/3d.html#room">Room</a>
+                <a href="/html/3d.html#cloth">Cloth Animations</a>
+                <a href="/html/3d.html#capsule">Capsule</a>
+            </div>
+        </li>
+        
+        <li class="dropdown" id="dropdown-1">
+            <a class="droplink main-menu-link" href="#" aria-haspopup="true" aria-expanded="false">Game Dev</a>
+            <div class="dropdown-content" id="drop-content-1">
+                <a href="games.html">All games briefly</a>
+                <a href="/html/dreamspaces.html">Dreamspaces</a>
+                <a href="/html/reclaiming.html">Reclaiming</a>
+                <a href="/html/porphyreos.html">Porphyreos</a>
+                <a href="/html/endless-runner.html">Endless Runner</a>
+                <a href="/html/guess-the-number.html">Guess The Number</a>
+                <a href="/html/space-invaders.html">Space Invaders</a>
+                <a href="/html/dodge-the-garlic.html">Dodge The Garlic</a>
+            </div>
+        </li>
+
+        <li><a class="main-menu-link" href="/html/about.html">About me</a></li>
+        <li><a class="main-menu-link call-to-action" href="/html/contact.html">Contact Me!</a></li>
+    </ul>
+</nav>
+
+<script src="/js/update-aria.js"></script>
+<script src="/js/hamburger.js"></script>

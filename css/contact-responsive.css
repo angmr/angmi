@@ -1,0 +1,24 @@
+@media screen and (max-width: 1220px) {
+    h1 {
+        color: rgb(179, 197, 255);
+        font-size: 1.6rem;
+    }
+
+    .form-container {
+        margin-left: 5x;
+        margin-right: 5px;
+    }
+
+    .form-group {
+        width: 50px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    body {
+        background-image: linear-gradient(rgba(8, 1, 23, 0.6), rgba(43, 17, 81, 0.6), rgba(45, 57, 84, 0.6) 100%);
+    }
+    .form-group {
+        padding-left: 24px;
+    }
+}

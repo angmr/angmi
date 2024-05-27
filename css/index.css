@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Indie+Flower&family=Poppins&display=swap');
+
+:root {
+  font-family: 'Poppins', sans-serif;
+  font-size: 100%;
+  --main-text-color: #769fa0;
+  --green-glow-color: rgba(0, 255, 145, 0.8);
+  --main-complimentary-color: #0059ff;
+  --purple: #4400ff;
+  --main-contrast-color: #ff6699;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(rgba(18, 9, 37, 0.6), rgba(39, 19, 97, 0.6), rgba(75, 95, 141, 0.6) 100%), url("/img/bg1.jpg");
+  background-color: #202020;
+  background-size: 100%;
+  padding-top: 2em;
+  margin: 0px;
+}
+
+main {
+  width: 90vw;
+}
+
+.external-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  margin-bottom: 50px;
+  margin-top: 10px;
+  padding: 30px;
+  padding-top: 50px;
+  padding-bottom: 60px;
+  background-image: linear-gradient(-40deg, rgb(255, 56, 122, 0.3) 1%, rgb(79, 34, 135, 0.5), rgb(50, 50, 169, 0.1) 100%);
+  backdrop-filter: blur(2px);
+  box-shadow: 4px 4px 50px rgb(19, 17, 29), -2px -2px 4px rgb(118, 159, 160, 0.412);
+  border-radius: 20px;
+}
+
+.pagelink {
+  text-decoration: none;
+  color: var(--main-text-color);
+  border-bottom: solid 1px #566a8f;
+}
+
+.pagelink:hover {
+  cursor: pointer;
+  color: #486b6c;
+}
+
+.flex-item {
+  width: 90vw;
+  flex: 1; /* Distributes available space equally among the child elements */
+  padding: 20px;
+  padding-left: 35px;
+  margin: 10px;
+}
+
+p, h1, h2, h3 {
+  color: var(--main-text-color);
+  user-select: none;
+}
+
+.intro-text p {
+  max-width: 800px;
+  word-wrap: break-word;
+}
+
+strong {
+  font-weight: normal;
+}
+
+#secret{
+  text-decoration: none;
+  color: var(--main-text-color);
+  border-bottom: solid 1px #566a8f;
+}
+
+/*Link visited focus hover active*/
+#secret:hover {
+  color: #486b6c;
+}
+
+#typewriter {
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0%;
+  transition: width 5s ease;
+}
+
+#typewriter.animateWidth {
+  width: 100%;
+}
+
+/*------------------ W E L C O M E -- P L A Y T E X T -----------------*/
+.playtext {
+  cursor: pointer;
+  position: relative; /* Ensure h1 remains in the normal flow */
+  z-index: 1;
+}
+
+#welcome {
+  padding: 5px;
+  font-family: 'Agbalumo', 'Poppins','sans-serif';
+  font-size: 3rem;
+  text-shadow: 1px 1px 20px rgb(0, 0, 0);
+  letter-spacing: 0.03em;
+  margin-top: 50px;
+}
+
+@keyframes colorChange {
+  0% {
+    color: #ff6699;
+  }
+  25% {
+    color: #ff6685;
+  }
+  50% {
+    color: #ff6699;
+  }
+  75% {
+    color: #ff6685;
+  }
+  100% {
+    color: #ff6699;
+  }
+}
+
+.playtext:hover {
+  animation: colorChange 1.5s infinite;
+}
+
+#particles-js {
+  opacity: 0%;
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  top:0;
+}
+
+/*--------SCROLLBAR---------------------------------------*/
+/* width and height for WebKit browsers */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+/* track styles */
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+/* handle styles */
+::-webkit-scrollbar-thumb {
+  background: #202020;
+  border-radius: 6px;
+  outline: 0.5px solid #6f6f6f;
+}
+
+/* handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background:var(--purple);
+}
