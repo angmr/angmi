@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(data => {
             document.querySelectorAll('.topnav').forEach(element => {
                 element.innerHTML = data;
+                executeScripts(element);
             });
         });
 
@@ -41,4 +42,19 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 });
 
-
+/**
+ * This function takes an element as a parameter, finds all script tags within the element,
+ * and for each one, creates a new script tag, copies over the attributes and code,
+ * and replaces the old script tag with the new one. This is necessary because innerHTML
+ * does not execute scripts when it inserts the HTML into the DOM.
+ * @param {*} element 
+ */
+function executeScripts(element) {
+    Array.from(element.getElementsByTagName("script")).forEach(oldScript => {
+        const newScript = document.createElement("script");
+        Array.from(oldScript.attributes)
+            .forEach(attr => newScript.setAttribute(attr.name, attr.value) );
+        newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+        oldScript.parentNode.replaceChild(newScript, oldScript);
+    });
+}

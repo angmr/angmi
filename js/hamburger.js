@@ -1,5 +1,6 @@
 // Function to toggle the menu
 function toggleMenu() {
+    console.log('toggleMenu() called');
     var menu = document.querySelector('.menu');
     menu.classList.toggle('open');
     document.body.classList.toggle('menu-open');
