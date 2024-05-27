@@ -1,0 +1,37 @@
+@media screen and (max-width: 800px) {
+    p {
+        margin-bottom: 10%;
+    }
+    
+    img {
+        width: 96%;
+        height: 100%;
+        margin: 2%;
+    }
+
+    .double-img-container {
+        flex-direction: column;
+    }
+
+    #ribbon {
+        margin-left: 0%;
+        margin-left: 0%;
+    }
+
+    #sd1rt:hover {
+        transform: scale(1) translate(0%, 0%);
+      }
+      #sd1lt:hover {
+        transform: scale(1) translate(0%, 0%);
+      }
+      #sd2rt:hover {
+        transform: scale(1) translate(0%, 0%);
+      }
+      #sd2lt:hover {
+        transform: scale(1) translate(0%, 0%);
+      }
+      
+      #comp1:hover {
+        transform: scale(1);
+      }
+}

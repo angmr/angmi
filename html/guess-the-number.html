@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/tokyo-night-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/guess-the-number.css">
+    <title>Guess The Number | Python Game | Tkinter | Free Download</title>
+</head>
+<body>
+    <header>
+        <div class="topnav"></div>
+    </header>
+
+    <main>
+        <h1>Guess The Number</h1>
+        <a class="pagelink" id="showOverlay">See Code</a>
+                            <div id="overlay">
+                                <button id="hideOverlay">X</button>
+                                <pre><code>
+                                    from random import randint
+                                    from tkinter import *
+                                    import tkinter.font as font
+                                    from playsound import playsound
+                                    from PIL import ImageTk, Image
+
+                                    secret_number = randint(0, 10)
+                                    max_tries = 3
+                                    attempts = 0
+                                    found = False
+                                    found_subs = -1
+
+
+                                    def close_window():
+                                        playsound('\\python\\GUI\\Guess_the_number\\exit.mp3')  # sound by Camouflaged_Noob
+                                        root.destroy()
+
+
+                                    def donut_destroy():
+                                        playsound('\\python\\GUI\\Guess_the_number\\donut.mp3')  # sound by rj10328
+                                        donut_button.destroy()
+
+
+                                    def show_hint():
+                                        playsound('\\python\\GUI\\Guess_the_number\\click.mp3')  # sound by deadsillyrabbit
+                                        hint = Label(root, text="The number is between 0 and 10", pady=5)
+                                        hint.grid(row=5, column=0)
+
+
+                                    def open_message_box(x):
+                                        top = Toplevel()
+                                        guess_too_low_msg = Label(top, text=f"Your guess is too {x}.", width=20, height=2).pack()
+                                        top.iconbitmap("icon.ico")
+                                        ok_button = Button(top, text="OK", command=top.destroy).pack()
+
+
+                                    def game_won():
+                                        global found
+                                        message = Label(root, text="You found it!", padx=150, pady=20)
+                                        message.grid(row=3, column=0)
+                                        message2 = Label(root, text="Here's a donut for your reward:", pady=5)
+                                        message2.grid(row=5, column=0)
+                                        donut_bunny = Label(root, text="{\\__/}\n( • . •)\n/    >")
+                                        donut_bunny.grid(row=6, column=0)
+                                        donut_button.place(x=229, y=209, anchor=CENTER)
+                                        found = True
+
+
+                                    def submit():
+                                        global attempts
+                                        global found_subs
+                                        global found
+                                        global secret_number
+
+                                        playsound('\\python\\GUI\\Guess_the_number\\click.mp3')  # sound by deadsillyrabbit
+
+                                        while not found:
+                                            try:
+                                                user_input = int(num_field.get())
+                                            except ValueError:
+                                                break
+
+                                            attempts += 1
+
+                                            if attempts < max_tries:
+                                                if user_input == secret_number:
+                                                    hint_button.destroy()
+                                                    game_won()
+
+                                                if user_input != secret_number:
+                                                    message = Label(root, text=f"Unfortunately {user_input} is not the hidden number. Try "
+                                                                            f"again...", pady=5)
+                                                    message.grid(row=3, column=0)
+                                                    if user_input < secret_number:
+                                                        open_message_box("low")
+                                                    else:
+                                                        open_message_box("high")
+                                                    break
+
+                                            elif attempts == max_tries:
+                                                hint_button.destroy()
+                                                if user_input == secret_number:
+                                                    game_won()
+                                                else:
+                                                    message = Label(root, text=f" Well, {user_input} is not the hidden number and "
+                                                                            f"you have no more tries left.\nYou lost.")
+                                                    message.grid(row=3, column=0)
+                                                    break
+
+                                            elif attempts == max_tries + 1:
+                                                message = Label(root, text="It's game over. You can leave now.")
+                                                message.grid()
+                                                break
+                                            elif attempts == max_tries + 2:
+                                                message = Label(root, text="You are out of tries. Please stop guessing.")
+                                                message.grid()
+                                                break
+                                            elif attempts == max_tries + 3:
+                                                message = Label(root, text="Why do you keep pressing the button?")
+                                                message.grid()
+                                                break
+                                            elif attempts == max_tries + 4:
+                                                message = Label(root, text="You are OUT OF TRIES. It's over!")
+                                                message.grid()
+                                                break
+                                            elif attempts == max_tries + 5:
+                                                submit_button = Button(root, text="Submit my guess!", bd=2, command=submit, state=DISABLED)
+                                                submit_button.grid(row=2, column=0)
+                                                exit_button = Button(root, text='Exit', command=close_window)
+                                                exit_button.grid()
+                                                break
+                                        else:
+                                            found_subs += 1
+                                            if found_subs == 1:
+                                                message = Label(root, text="You have already found the number. What more do you want?", width=55)
+                                                message.grid()
+                                            if found_subs == 2:
+                                                message = Label(root, text="I already gave you a donut.", width=55)
+                                                message.grid()
+                                            if found_subs == 4:
+                                                message = Label(root, text="Please stop pressing this button.")
+                                                message.grid()
+                                            if found_subs == 6:
+                                                message = Label(root, text="See? It does nothing now.")
+                                                message.grid()
+                                            if found_subs == 7:
+                                                donut_bunny = Label(root, text="{\\__/}\n( - . -)\n/    >")
+                                                donut_bunny.grid(row=6, column=0)
+                                            if found_subs == 8:
+                                                submit_button = Button(root, text="Submit my guess!", bd=2, command=submit, state=DISABLED)
+                                                submit_button.grid(row=2, column=0)
+                                                exit_button = Button(root, text='Exit', command=close_window)
+                                                exit_button.grid()
+
+
+                                    def next_func():
+                                        playsound('\\python\\GUI\\Guess_the_number\\click.mp3')  # sound by deadsillyrabbit
+                                        print(secret_number)
+                                        # clear
+                                        info_line0.destroy()
+                                        info_line1.destroy()
+                                        info_line2.destroy()
+                                        next_button.destroy()
+
+                                        # text field with prompt
+                                        num_field_txt_prompt = Label(root, text="Type in your guess: ", width=55, bd=10)
+                                        num_field_txt_prompt.grid(row=0, column=0)
+                                        num_field.grid(row=1, column=0)
+
+                                        # submit button
+                                        submit_button = Button(root, text="Submit my guess!", bd=1, command=submit)
+                                        submit_button.grid(row=2, column=0)
+
+                                        # draw hint button
+                                        hint_button.grid(row=5, column=0)
+
+
+                                    root = Tk()
+                                    root.title("Guess the number")
+                                    root.geometry("400x400")
+                                    root.iconbitmap("icon.ico")
+                                    root.config(cursor='@cursor.cur')
+
+                                    num_field = Entry(root, width=5)
+                                    hint_button = Button(root, text="Get Hint", command=show_hint)
+
+                                    # define font
+                                    small = font.Font(size=8)
+                                    bold_and_big = font.Font(size=10, weight='bold')
+
+                                    # donut
+                                    donut_img = ImageTk.PhotoImage(Image.open("donut.png"))
+                                    donut_button = Button(root, image=donut_img, borderwidth=0, command=donut_destroy)
+
+                                    # startup screen
+                                    info_line0 = Label(root, text="There is a number hidden inside this program", width=40, pady=15)
+                                    info_line0['font'] = bold_and_big
+                                    info_line0.grid(row=0, column=0)
+                                    info_line1 = Label(root, text="You have 3 tries to find it", width=55, pady=10)
+                                    info_line1.grid(row=1, column=0)
+                                    info_line2 = Label(root, text='Click on Next to begin', fg='gray', width=55, pady=5)
+                                    info_line2['font'] = small
+                                    info_line2.grid(row=3, column=0)
+                                    next_button = Button(root, text="Next", command=next_func)
+                                    next_button.grid(row=2, column=0)
+
+                                    root.mainloop()
+                                </code></pre>
+                            </div>
+        <div id="main-container">
+            <p>
+                A guess the number game written in Python, typically a console game but in this case it has a basic UI made with Tkinter.
+                I encourage you to download and try this game out yourself, it's free and very short. Anything else I say, will spoil the 
+                experience as the element of surprise and expections play a big part in it.
+            </p>
+            <a class="pagelink" id="download" href="/download/games/guess-the-number.rar" download>Download Game</a>
+            <p><a class="pagelink" id="secret">Reveal more...</a></p>
+            <div id="hidden-div" class="hidden">
+                    <div class="container">
+                        <img class="big-img" src="/img/games/gtn-1.png" alt="A program window with a Next button.">
+                        <img class="big-img" src="/img/games/gtn-2.png" alt="A program window featuring a simple interface with an input field, messages ans a pop-up window.">
+                    </div>
+                    <div class="container">
+                        <p>
+                            I chose to add graphics to the classic "Guess the Number" game using Tkinter. I kept only the central idea that there is a 
+                            hidden number, and the player tries to find it. I used this as an opportunity to create something different. 
+                            I limited the hidden number between 0 and 10. This information is available to the player only if they want additional help
+                            by clicking the "Get Hint" button. Otherwise, they only have guidance on whether to guess higher or lower, in the form of a
+                            pop-up window that appears when the player clicks the "Submit" button, and only if their guess is different from the hidden number.<br>
+                            <br>
+                            I keep track of the player's attempts in the variable "attempts," which is initialized to 0 and increases each time the "Submit" 
+                            button is pressed, provided that the user's input is valid. The program informs the player before starting the game that they have 
+                            only three attempts to find the hidden number. However, nothing prevents them from continuing to try and press the "Submit" button 
+                            even if they exceed the attempt limit.
+                        </p>
+                    </div>
+                    <div class="container">
+                        <img loading="lazy" class="small-img" src="/img/games/gtn-bunny-1.png" alt="A bunny character offering a reward donut.">
+                        <img loading="lazy" class="small-img" src="/img/games/gtn-bunny-2.png" alt="A bunny character with a displeased expression on it's face arguing with the player.">
+                    </div>
+                    <div class="container">
+                        <p>
+                            In addition to the hidden number, there is an ASCII bunny living inside the program that "controls" it and makes an appearence to give tasty donuts to those 
+                            who win. The bunny gets annoyed when the player uses the program in a non-predefined way, reacts by displaying messages, changing 
+                            expressions, and then disabling the "Submit" button so that the user cannot press it.<br><br>
+                            Finally, it displays an exit button, forcing the user to leave and leave it alone. In this way, the user and the program battle for control and power, and the purpose of the 
+                            game shifts from finding the hidden number to simply interacting with the program.
+                            When the player finds the hidden number, the bunny appears holding a donut, and the player can click on it to take it. 
+                            Whether the player wins or loses, they can continue to press the "Submit" button until it is disabled. However, 
+                            the bunny appears only if the player has won and gives them only one donut.
+                        </p>
+                    </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer"></div>
+    </footer>
+    
+    <script src="/js/loader.js"></script>
+    <script src="/js/showonclick.js"></script>
+    <script src="/js/showoverlay.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

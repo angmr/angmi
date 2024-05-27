@@ -1,0 +1,29 @@
+html {
+   height: 100vh;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    height: 100vh;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.external-container {
+    margin-top: 0px;
+    max-width: fit-content;
+    margin-bottom: 100px;
+}
+
+footer {
+    background-color: #1e1c2c;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+}

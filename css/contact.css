@@ -1,0 +1,175 @@
+main {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+
+label {
+    color: rgb(179, 197, 255);
+    margin-right: 5px;
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px rgba(255, 255, 255, 0.5);
+    width: 100%;
+    z-index: 0;
+    padding-bottom: 100px;
+    padding-top: 60px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 16px;
+    box-shadow: 4px 4px 40px rgb(37, 37, 44), -4px -4px 50px black;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(3px);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+input[type=submit], input[type=reset] {
+    background-color: #3e04aa3c;
+    border: 1px solid rgba(118, 159, 160, 0.736);
+    border-radius: 10px;
+    color: rgb(179, 197, 255);
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+input[type=text], input[type=email] {
+    margin: 5px;
+    margin-left: 28px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.34);
+    border: 1px solid rgba(118, 159, 160, 0.736);
+    color: white;
+    font-size: 1rem;
+}
+
+input[type=email] {
+    margin-left: 33px;
+}
+
+input[type=text]:focus, input[type=email]:focus {
+    outline: none;
+    border: 1px solid rgb(151, 201, 202);
+}
+
+textarea {
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.34);
+    border: 1px solid rgba(118, 159, 160, 0.736);
+    color: white;
+    font-size: 1rem;
+}
+
+textarea:focus {
+    outline: none;
+    border: 1px solid rgb(151, 201, 202);
+}
+
+
+.circle {
+    box-shadow: 4px 4px 50px rgb(17, 0, 255), -4px -4px 50px rgb(255, 0, 191);
+    border-radius: 50%;
+    position: relative;
+    z-index: -999;
+}
+
+.circle.movable {
+    cursor: grab;
+    z-index: 0;
+    position: absolute;
+}
+
+.circle.movable:active {
+    cursor: grabbing;
+}
+
+#c1 {
+    width: 250px;
+    height: 250px;
+    top: -190px;
+    right: 90px;
+    background-image: linear-gradient(45deg, black, rgb(160, 255, 253));
+}
+
+#c2 {
+    width: 130px;
+    height: 130px;
+    top: 400px;
+    right: 1300px;
+    background-image: linear-gradient(45deg, black, rgb(160, 255, 253));
+}
+
+#c3 {
+    width: 100px;
+    height: 100px;
+    top: -570px;
+    right: -470px;
+    background-image: linear-gradient(45deg, black, rgb(160, 255, 253));
+}
+
+#c4 {
+    width: 150px;
+    height: 150px;
+    top: 100px;
+    right: 200px;
+    background-image: linear-gradient(45deg, black, rgb(160, 255, 253));
+}
+
+#c5 {
+    width: 80px;
+    height: 80px;
+    top: 200px;
+    right: 300px;
+    background-image: linear-gradient(45deg, black, rgb(160, 255, 253));
+}
+
+#c6 {
+    width: 100px;
+    height: 100px;
+    top: -900px;
+    right: 80px;
+    background-image: linear-gradient(45deg, black, rgb(160, 255, 253));
+}
+
+input[type=submit]:hover, input[type=reset]:hover {
+    background-color: #3e04aa89;
+    box-shadow: 3px 3px 100px 3px rgb(0, 255, 145);
+    border: 1px solid rgb(0, 255, 145);
+}
+
+input[type=submit]:active, input[type=reset]:active {
+    box-shadow: 3px 3px 100px 3px rgb(0, 255, 145);
+    border: 1px solid rgba(118, 159, 160, 0.736);
+}

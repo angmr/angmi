@@ -1,0 +1,195 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  width: 80%;
+  margin: 3%;
+}
+
+.container-dark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 6%;
+  padding-top: 3%;
+  padding-left: 10%;
+  padding-right: 10%;
+  margin: 0.3%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid #324077;
+  border-radius: 10px;
+}
+
+.container-light {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 6%;
+  padding-top: 3%;
+  padding-left: 10%;
+  padding-right: 10%;
+  margin: 0.3%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid #3c4561;
+  border-radius: 10px;
+}
+
+img {
+  border-radius: 2%;
+}
+
+p {
+  margin-bottom: 5%;
+}
+
+/*Scale up images on hover and move them towards the center of the viewport*/
+#sd1rt {
+  transition: transform 0.3s ease-in-out;
+}
+#sd1lt {
+  transition: transform 0.3s ease-in-out;
+}
+#sd2rt {
+  transition: transform 0.3s ease-in-out;
+}
+#sd2lt {
+  transition: transform 0.3s ease-in-out;
+}
+
+#comp1 {
+  transition: transform 0.3s ease-in-out;
+  z-index: 2;
+}
+
+#sd1rt:hover {
+  transform: scale(2) translate(25%, 25%);
+  box-shadow: -5px -5px 20px 5px #161126;
+}
+#sd1lt:hover {
+  transform: scale(2) translate(-25%, 25%);
+  box-shadow: -5px -5px 20px 5px #161126;
+}
+#sd2rt:hover {
+  transform: scale(2) translate(25%, -25%);
+  box-shadow: -5px -5px 20px 5px #161126;
+}
+#sd2lt:hover {
+  transform: scale(2) translate(-25%, -25%);
+  box-shadow: -5px -5px 20px 5px #161126;
+}
+
+#comp1:hover {
+  transform: scale(1.8);
+  box-shadow: -5px -5px 20px 5px #161126;
+}
+
+/*-------------------------ROOM CAROUSEL-----------------------------------------------------------*/
+#carousel-container0 {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  position: relative; /* Add position relative to position buttons absolutely */
+  border: 2px solid #62170F;
+  border-radius: 2%;
+}
+
+#carousel0 {
+  display: flex;
+  transition: transform 0.7s ease-in-out;
+}
+
+.carousel-image {
+  width: 100%;
+  height: auto;
+}
+
+#prev-btn0, #next-btn0 {
+  border: 1px solid #62170F;
+  cursor: pointer;
+  font-size: 26px;
+  background: rgba(27, 23, 54, 0.2);
+  color: rgb(199, 208, 240);
+  padding: 20px;
+  border: none;
+  z-index: 1;
+  position: absolute;
+  margin: auto 0;
+  
+}
+
+#prev-btn0 {
+  left: 0;
+  border: 1px solid #62170F;
+}
+
+#next-btn0 {
+  right: 0;
+  border: 1px solid #62170F;
+}
+
+#prev-btn0:hover, #next-btn0:hover {
+  background: rgba(27, 23, 54, 0.51);
+  color: rgb(127, 138, 181);
+}
+
+/*-------------------------CLOTH SECTION-----------------------------------------------------------*/
+#cloth {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.double-img-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.single-img-container {
+  display: flex;
+  align-items: center;
+}
+
+.gif-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.gif {
+  width: 100%;
+  height: fit-content;
+  border-radius: 16px;
+  padding: 1%;
+}
+
+#ribbon {
+  border-radius: 10px;
+  padding: 0%;
+}
+
+#faster-gif {
+  animation: play 0.1s steps(10) infinite;
+  background-image: url('/img/3d/cloth2.gif');
+}
+
+@keyframes play {
+  from {
+    background-position: 0;
+  }
+  to {
+    background-position: 232320px; /* Adjusted based on the number of frames in GIF */
+  }
+}
+
+/*number of frames * width = papari*/

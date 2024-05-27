@@ -1,0 +1,70 @@
+@media screen and (max-width: 800px) {
+    body {
+        background-image: linear-gradient(rgba(8, 1, 23, 0.6), rgba(43, 17, 81, 0.6), rgba(45, 57, 84, 0.6) 100%);
+    }
+
+    .external-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .intro-text {
+        max-width: 100%;
+    }
+
+    .click-prompt {
+        display: none;
+    }
+
+    #secret {
+        display: none;
+    }
+
+    #typewriter {
+        display: none;
+    }
+
+    .highlights-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .highlights {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .highlight-item {
+        margin: 0px;
+        margin-right:16px;
+        margin-bottom: 20px;
+        min-height: 280px;
+        max-height: 280px;
+        width: 100%;
+    }
+
+    .highlight-title {
+        margin-bottom: 1px;
+    }
+
+    .highlight-description {
+        margin-bottom: 5px;
+        margin-top: 1px;
+    }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 800px) {
+    .highlight-item {
+        margin: 0px;
+        margin-right: 16px;
+        margin-bottom: 20px;
+        min-height: 320px;
+        max-height: 320px;
+        width: 100%;
+    }
+}

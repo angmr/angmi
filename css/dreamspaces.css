@@ -1,0 +1,400 @@
+.intro-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#main-image {
+  text-align: center;
+  border: 1px solid var(--main-text-color);
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+}
+
+.box {
+  background-image: linear-gradient(#100f4fa2,#25295e9d,#5c69bf61 100%);
+  padding: 40px;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 60px;
+}
+
+strong {
+  font-weight: normal;
+}
+
+.p-white {
+  color: #98a5d3;
+}
+
+h1 {
+  margin-bottom: 10px;
+  margin-top: 20px;
+  padding: 10px;
+  text-align: center;
+}
+
+span {
+  color: var(--main-text-color);
+  font-size: 1.5em;
+  font-weight: 900;
+}
+
+table {
+  margin: 50px;
+  color: #8496FF;
+  width: 100%;
+}
+
+th {
+  text-align: left;
+  color: var(--main-text-color);
+  width:120px;
+}
+
+h3 {
+  position: relative; /* Make sure the content is positioned relative to the container */
+  z-index: 2; /* Bring the content to the front */
+  color: #8496FF;
+  font-size: 1.2rem;
+  margin-left: 12px;
+  margin-bottom: 40%;
+  padding: 10px;
+  max-width: 400px;
+}
+
+h4 {
+  color: #bcc2e5;
+  font-size: 1.2rem;
+  text-align: center;
+  letter-spacing: 0.1em;
+  margin-top: 0px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.video {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 40px;
+  margin-top: 60px;
+  width: 100%;
+}
+
+.video-container {
+  width: 100%;
+  padding-top: 1%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+#video {
+  border: none;
+  border-radius: 30px;
+  width: 100%;
+}
+
+.download {
+  width: 100%;
+  text-align: center;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+/*----------------------------------------Grid-------------------------------------------*/
+.wrapper{
+  display: grid;
+  margin: 0 auto;
+  min-width: 1300px;
+  max-width: 1920px;
+  padding: 2%;
+  grid-template-columns: repeat(9, 1fr);
+  grid-auto-rows: minmax(120px, 170px);
+  grid-gap: 5px;
+}
+
+.wrapper div {
+  border: 1px solid var(--main-text-color);
+  border-radius: 10px;
+}
+
+.fit-image {
+  /* This will make the image scale and maintain its aspect ratio */
+  max-width: 100%;
+  height: auto;
+}
+
+.grid1 {
+  grid-column: 1/5;
+  grid-row: 1/2;
+  overflow: hidden;
+}
+
+.grid2 {
+  grid-column: 5/7;
+  grid-row: 1/3;
+  overflow: hidden;
+}
+
+.grid3 {
+  grid-column: 7/10;
+  overflow: hidden;
+}
+
+.grid4{
+  grid-column:7/10 ;
+  overflow: hidden;
+}
+
+.grid5 {
+  grid-column: 1/3; /*make the grid item span from the start of the first column to the end of the second column.*/
+  grid-row: 2/2;
+  overflow: hidden;
+}
+
+.grid6 {
+  grid-column: 1/4;
+  grid-row: 3/4;
+  overflow: hidden;
+}
+
+.grid7 {
+  grid-column: 3/5;
+  grid-row: 2/2;
+  overflow: hidden;
+}
+
+.grid8 {
+  grid-column: 4/6;
+  grid-row: 3/4;
+  overflow: hidden;
+}
+
+.grid9 {
+  grid-column: 6/7;
+  grid-row: 3/4;
+  overflow: hidden;
+}
+
+.grid10 {
+  grid-column: 1/3;
+  overflow: hidden;
+}
+
+.grid11 {
+  grid-column: 3/6;
+  grid-row: 4/5;
+  overflow: hidden;
+}
+
+.grid12 {
+  grid-column: 7/10;
+  grid-row: 3/5;
+  overflow: hidden;
+}
+
+.grid13 {
+  grid-column: 6/7;
+  grid-row: 4/5;
+  overflow: hidden;
+}
+
+/*********************************Media Queries************************************/
+@media (max-width: 660px) {
+  body {
+    background-image: linear-gradient(rgba(8, 1, 23, 0.6), rgba(43, 17, 81, 0.6), rgba(45, 57, 84, 0.6) 100%);
+  }
+  .wrapper {
+    min-width: 100px;
+    max-width: 800px;
+    padding: 2%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(5px, 100px);
+    grid-gap: 2px;
+  }
+
+  .wrapper div {
+    border: none;
+    border-radius: 10px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+  }
+
+  .grid1 {
+    grid-column: 1/3;
+    grid-row: 1/2;
+  }
+  .grid2 {
+    grid-column: 3/4;
+    grid-row: 1/3;
+    display: flex;
+  }
+  .grid3 {
+    grid-column: 1/3;
+    grid-row: 2/3;
+  }
+
+  .grid5 {
+    grid-column: 1/3;
+    grid-row: 3/5;
+    display: flex;
+  }
+
+  .grid13 {
+    grid-column: 1/2;
+    grid-row: 5/7;
+    display: flex;
+  }
+
+  .grid11 {
+    grid-column: 2/3;
+    grid-row: 5/6; /*field*/
+    display: flex;
+    object-fit: fill;
+  }
+
+  .grid6 {
+    grid-column: 2/4;
+    grid-row: 6/7; /*starry corridor*/
+  }
+
+  .grid12 {
+    grid-column: 3/4;
+    grid-row: 3/4; /*transparent figure*/
+  }
+
+  .grid9 {
+    grid-column: 3/4;
+    grid-row: 4/6; /*red light hallway*/
+    display: flex;
+  }
+
+  .grid4 {
+    grid-column: 1/4;
+    grid-row: 7/8; 
+  }
+
+  .grid7 {
+    grid-column: 3/4;
+    grid-row: 8/9; /*pink floating door*/
+    display: flex;
+  }
+
+  .grid10 {
+    grid-column: 1/3; /*yellow*/
+  }
+
+  .grid8 {
+    grid-column: 1/4;
+    grid-row: 9/11; /*watery portal*/
+  }
+
+  .download {
+    font-size: small;
+  }
+
+  .itch {
+    width: 50%;
+    margin: 0px;
+  }
+}
+
+@media screen and (max-width: 1025px) and (min-width: 660px) {
+  body {
+    background-image: linear-gradient(rgba(8, 1, 23, 0.6), rgba(43, 17, 81, 0.6), rgba(45, 57, 84, 0.6) 100%);
+  }
+  .wrapper {
+    min-width: 100px;
+    max-width: 800px;
+    padding: 2%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(5px, 100px);
+    grid-gap: 4px;
+  }
+
+  .wrapper div {
+    border: none;
+    border-radius: 10px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+  }
+
+  .grid1 {
+    grid-column: 1/4;
+    grid-row: 1/3;
+  }
+  .grid2 {
+    grid-column: 4/6;
+    grid-row: 1/4;
+    display: flex;
+  }
+  .grid3 {
+    grid-column: 1/3;
+    grid-row: 3/5;
+  }
+
+  .grid5 {
+    grid-column: 3/5;
+    grid-row: 4/6;
+  }
+
+  .grid13 {
+    grid-column: 1/2;
+    grid-row: 5/7;
+  }
+
+  .grid11 {
+    grid-column: 2/3;
+    grid-row: 5/6; /*field*/
+  }
+
+  .grid6 {
+    grid-column: 2/4;
+    grid-row: 6/8; /*starry corridor*/
+  }
+
+  .grid12 {
+    grid-column: 3/4;
+    grid-row: 3/4; /*transparent figure*/
+  }
+
+  .grid9 {
+    grid-column: 4/5;
+    grid-row: 6/8; /*red light hallway*/
+  }
+
+  .grid4 {
+    grid-column: 1/3;
+    grid-row: 8/10;
+  }
+
+  .grid7 {
+    grid-column: 3/5;
+    grid-row: 8/10; /*pink floating door*/
+  }
+
+  .grid10 {
+    grid-column: 1/2; /*yellow*/
+    grid-row: 7/8;
+  }
+
+  .grid8 {
+   display: none;
+  }
+
+  .itch {
+    width: 50%;
+    margin: 0px;
+  }
+}
