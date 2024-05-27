@@ -1,6 +1,6 @@
 # angmi
-Personal Portfolio Site
+<h1>Personal Portfolio Site</h1>
 
-angmi.gr
+<h2>angmi.gr</h2>
 
-My old website which I plan on improving, fixing the menu on mobile and the contact form, while also adding new content.
+<p> My old website which I plan on improving, <span style="text-decoration: overline;">fixing the menu on mobile</span> and the contact form, while also adding new content.</p>
