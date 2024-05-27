@@ -3,4 +3,4 @@
 
 <h2>angmi.gr</h2>
 
-<p> My old website which I plan on improving, <span style="text-decoration: overline;">fixing the menu on mobile</span> and the contact form, while also adding new content.</p>
+<p>My old website which I plan on improving, <span style="text-decoration: overline;">fixing the menu on mobile</span> and the contact form, while also adding new content.</p>
