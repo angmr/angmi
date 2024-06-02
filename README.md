@@ -1,6 +1,4 @@
 # angmi
-Personal Portfolio Site
+<h1>Personal Portfolio Site</h1>
 
-angmi.gr
-
-My old website which I plan on improving, fixing the contact form, while also adding new content.
+<h2>angmi.gr</h2>
